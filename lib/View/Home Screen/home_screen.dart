@@ -6,41 +6,63 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
-        length: 3,
+        length: 4,
         child: Scaffold(
           appBar: AppBar(
-            backgroundColor: Colors.green,
+            backgroundColor: Colors.green.shade800,
+            title: Text("WhatsApp"),
+            titleTextStyle: TextStyle(color: Colors.white, fontSize: 25),
+            actions: [
+              Row(
+                children: [
+                  Icon(
+                    Icons.search_outlined,
+                    color: Colors.white,
+                  ),
+                  SizedBox(
+                    width: 15,
+                  ),
+                  Icon(
+                    Icons.more_vert,
+                    color: Colors.white,
+                  ),
+                  SizedBox(
+                    width: 20,
+                  )
+                ],
+              )
+            ],
             bottom: TabBar(
-                dividerHeight: 0,
-                indicator: BoxDecoration(color: Colors.black),
-                indicatorSize: TabBarIndicatorSize.tab,
-                indicatorWeight: 5,
-                unselectedLabelColor: Colors.blue,
                 labelColor: Colors.white,
+                unselectedLabelColor: Colors.white,
+                indicatorColor: Colors.white,
                 tabs: [
                   Tab(
-                    icon: Icon(Icons.home),
-                    text: "Home",
+                    icon: Icon(Icons.camera),
                   ),
                   Tab(
-                    icon: Icon(Icons.settings),
-                    text: "Settings",
+                    text: "CHAT",
                   ),
                   Tab(
-                    icon: Icon(Icons.search),
-                    text: "search",
+                    text: "STATUS",
                   ),
+                  Tab(
+                    text: "CALLS",
+                  )
                 ]),
           ),
           body: TabBarView(children: [
-            Container(
-              color: Colors.red,
+            Center(
+              child: Text("camera screen"),
             ),
-            Container(
-              color: Colors.blue,
+            Center(
+              child: Text("chat screen"),
             ),
-            Container(
-              color: Colors.orange,
+            Center(
+              child: Text("status screen"),
+            ),
+            Center(
+              child: Text("calls screen"),
             ),
           ]),
         ));
